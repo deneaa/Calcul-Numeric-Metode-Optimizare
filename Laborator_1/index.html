@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Metode numerice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Metode numerice de calcul al rădăcinilor ecuațiilor neliniare</h2>
+
+    <fieldset>
+        <legend>Precizarea membrului stâng al ecuației</legend>
+
+        <div class="row">
+            <label>
+                <input type="radio" name="functie"> din colecție
+            </label>
+
+            <label>
+                <input type="radio" name="functie" checked> interactiv
+            </label>
+        </div>
+
+        <div class="row">
+            <label>f(x)=</label>
+            <select>
+                <option>Selectați funcția</option>
+                <option>x² - 4</option>
+                <option>sin(x)</option>
+                <option>cos(x)</option>
+            </select>
+
+            <label>f(x)=</label>
+            <input type="text" value="x*cos(x)-sin(x)">
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Extremitățile intervalului</legend>
+        <div class="row">
+            <label>a=</label>
+            <input type="number" class="small-input" value="-9">
+
+            <label>b=</label>
+            <input type="number" class="small-input" value="8">
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Precizarea metodei de calcul</legend>
+        <div class="row">
+            <select>
+                <option>Selectați metoda</option>
+                <option>Bisection</option>
+                <option>Newton-Raphson</option>
+                <option>Secantă</option>
+            </select>
+
+            <label>eps=1e-</label>
+            <input type="number" class="small-input" value="6">
+        </div>
+    </fieldset>
+
+    <div class="button-center">
+        <button>Execută!</button>
+    </div>
+
+    <div class="bottom-section">
+
+        <div class="graph">
+            Graficul funcției
+        </div>
+
+        <div class="results">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rădăcina x</th>
+                        <th>f(x)</th>
+                        <th>Număr iterații k</th>
+                        <th>Timp de calcul</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4">Rezultatele vor apărea aici</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
