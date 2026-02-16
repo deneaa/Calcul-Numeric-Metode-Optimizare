@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Metode numerice</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Metode numerice pentru ecuații neliniare</h2>
+
+      <!-- Selectarea modului -->
+      <fieldset class="mod-fieldset">
+        <legend>Mod de lucru</legend>
+        <div class="optiuni-mod">
+          <label>
+            <input type="radio" name="mod" id="mod-collectie" />
+            Din colecție
+          </label>
+          <label>
+            <input type="radio" name="mod" id="mod-interactiv" checked />
+            Interactiv
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Funcția -->
+      <fieldset class="functie-fieldset">
+        <legend>Precizarea funcției</legend>
+        <div class="input-functie">
+          <label for="select-functie">f(x) =</label>
+          <select id="select-functie">
+            <option>Selectați funcția</option>
+            <option>x^2</option>
+            <option>sin(x)</option>
+            <option>cos(x)</option>
+          </select>
+
+          <label for="camp-functie">f(x) =</label>
+          <input type="text" id="camp-functie" value="x-e^(-x)" />
+        </div>
+      </fieldset>
+
+      <!-- Interval -->
+      <fieldset class="interval-fieldset">
+        <legend>Intervalul de căutare</legend>
+        <div class="input-interval">
+          <label for="a-interval">a =</label>
+          <input type="number" id="a-interval" value="-1" step="0.1" />
+
+          <label for="b-interval">b =</label>
+          <input type="number" id="b-interval" value="1" step="0.1" />
+        </div>
+      </fieldset>
+
+      <!-- Metoda și epsilon -->
+      <fieldset class="metoda-fieldset">
+        <legend>Metoda de calcul</legend>
+        <div class="input-metoda">
+          <label for="select-metoda">Selectați metoda:</label>
+          <select id="select-metoda">
+            <option>Selectați metoda</option>
+            <option>Bisection</option>
+            <option>Coarde</option>
+            <option>Newton</option>
+            <option>Secant</option>
+          </select>
+
+          <label for="eps">eps = 1e-</label>
+          <input type="number" id="eps" value="6" />
+        </div>
+      </fieldset>
+
+      <!-- Buton executare -->
+      <div class="buton-executa">
+        <button id="buton-executa">Execută!</button>
+      </div>
+
+      <!-- Rezultate -->
+      <div class="rezultate-sectiune">
+        <h3>Grafic și rădăcini</h3>
+        <div class="rezultate-container">
+          <div class="grafic-box">
+            <canvas id="grafic-canvas"></canvas>
+          </div>
+          <div class="tabel-box">
+            <table id="tabel-rezultate">
+              <thead>
+                <tr>
+                  <th>Rădăcina x</th>
+                  <th>f(x)</th>
+                  <th>Număr iterații k</th>
+                  <th>Timp de calcul (ms)</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="bisectiei.js"></script>
+    <script src="coarzilor.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
